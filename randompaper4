@@ -1,0 +1,15 @@
+#!/bin/bash
+
+IMGLIST=/home/jc/scripts/wallpaperlist
+IMGLINE=0
+WALLPAPERLINK=/home/jc/scripts/background4.jpg
+
+IMGCOUNT=$(cat ${IMGLIST} | wc -l | awk '{print $1}')
+while [ ${IMGLINE} -eq 0 ]
+do
+	IMGLINE=${RANDOM}
+	let "IMGLINE %= ${IMGCOUNT}"
+done
+
+NEWWALLPAPER=$(head -${IMGLINE} ${IMGLIST} | tail -1)
+ln -sf ${NEWWALLPAPER} ${WALLPAPERLINK}

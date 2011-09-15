@@ -1,0 +1,18 @@
+#!/bin/bash
+CURRENTDESKTOP=`xprop -root | grep '_NET_CURRENT_DESKTOP(CARDINAL*' | awk -F= '{print $2}'`
+OLDDESKTOP=5
+while :
+do
+sleep 2
+CURRENTDESKTOP=`xprop -root | grep '_NET_CURRENT_DESKTOP(CARDINAL*' | awk -F= '{print $2}'`
+if [ $CURRENTDESKTOP -ne $OLDDESKTOP ]; then
+case $CURRENTDESKTOP
+in
+*0) fbsetbg /home/##/scripts/background1.jpg;;
+*1) fbsetbg /home/##/scripts/background2.jpg;;
+*2) fbsetbg /home/##/scripts/background3.jpg;;
+*3) fbsetbg /home/##/scripts/background4.jpg;;
+esac
+OLDDESKTOP=$CURRENTDESKTOP
+fi
+done
