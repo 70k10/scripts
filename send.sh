@@ -1,6 +1,7 @@
 #!/bin/bash
 # Arguments: remotehost remoteport
-# Receive side: nc l -u -p remoteport remotehost # probably want to redirect to some file >>>>>>>>>>
+# GNU netcat receive side: nc l -u -p remoteport remotehost # probably want to redirect to some file >>>>>>>>>>
+# BSD netcat receive side: nc -ul remotehost remoteport # probably want to redirect to some file >>>>>>>>>>
 mkfifo ncfifo
 nc -p 20000 -u $@ < ncfifo > ncfifo &
 NCPID=$(jobs -p %%)
