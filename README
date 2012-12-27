@@ -12,3 +12,7 @@ Accepts file with input like 'string 123.123.123.123 123.123.123.123 ... string'
 send.sh
 Script to help diagnose packet drops - pretty much rewritten
 Original idea here: http://www.raketenwerfer.de/post/939084469/small-script-to-directionally-test-for-packet-loss
+
+smbcheck.cgi
+CGI script for checking if samba mounts from fstab are mounted
+Written awhile ago...

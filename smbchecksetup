@@ -1,0 +1,33 @@
+Setup of the samba mount checker cgi script.
+
+First, setup an apache directory for cgi-bin. This should already be in the httpd.conf file.
+The path should be something like /opt/IBM/HTTPServer/cgi-bin, however the directory does 
+not exist. Therefore you will need to create it with sudo mkdir /opt/IBM/HTTPServer/cgi-bin.
+
+Next, copy the script into that folder and double-check that it has execute permissions.
+
+Finally, edit the httpd.conf file:
+
+Change this section from:
+
+<Directory "/opt/IBM/HTTPServer/cgi-bin">
+    AllowOverride None
+    Options None
+    Order allow,deny
+    Allow from all
+</Directory>
+
+to:
+
+<Directory "/opt/IBM/HTTPServer/cgi-bin">
+    AllowOverride None
+    Options None
+    Order deny,allow
+    Allow from 192.168.0.0/24
+</Directory>
+
+Save the file
+
+run
+sudo ./apachectl configtest
+sudo ./apachectl graceful
