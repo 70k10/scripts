@@ -33,7 +33,8 @@ fi
 #If there are no standalone servers defined in the NIM database, exit with error code 2.
 if [ $1 ]
 then
-    set -A hostlist "$@"
+    set -A hostlist $@
+    echo "$@"
     until [[ $# -eq 0 ]]; do
         `lsnim -t standalone $1`
         if [ $? -ne 0 ]
@@ -41,6 +42,8 @@ then
             echo "Error - host \"$1\" does not exist in nim database"
             exit 1
         fi
+        echo "success $1"
+        shift
     done
 else
     set -A hostlist `lsnim -t standalone | awk '{print $1}'`
@@ -56,6 +59,7 @@ echo "`date '+%H:%M %m/%d/%y'` Backing up the following server(s): ${hostlist[*]
 # Do the following for every server in the hostlist[] array - Server loop
 for host in ${hostlist[*]}
 do
+    echo "${host}"
     mb_name=${host}_mksysb # Name of MKSYSB, version number will be added later
     file_name=${host}_${date_time}.mksysb # Filename for MKSYSB, with date time stamp
  
