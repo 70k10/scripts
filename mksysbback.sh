@@ -8,7 +8,7 @@
 # Descrip-  Script to run a mksysb for servers in the nim database
 # Input -   Reads an argument list as hostname.  If the
 #           hostname exists in the nim database, it will be
-#           backed up. Otherwise if no arguement is supplied,
+#           backed up. Otherwise if no argument is supplied,
 #           all servers will be backed up. If a hostname fails
 #           the nim database check, the whole script exits.
 # Logic -   Script will keep two versions of a server MKSYSB on hand. v1 is the
@@ -27,9 +27,9 @@ then
     exit -1
 fi
  
-#Check for a single arguement.  If it exists, check that it is in the NIM database
+#Check for a single argument.  If it exists, check that it is in the NIM database
 #and add it to the ${hostlist[]} array, else exit with error code 1.
-#If no arguement is passed, add all standalone servers in the NIM database to the ${hostlist[]} array.
+#If no argument is passed, add all standalone servers in the NIM database to the ${hostlist[]} array.
 #If there are no standalone servers defined in the NIM database, exit with error code 2.
 if [ $1 ]
 then
