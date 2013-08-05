@@ -1,9 +1,9 @@
 #!/bin/ksh
 ################################################################################
 # Original Author-   Jayson Cofell
-# Date-     May 31 2013
+# Date-     Aug 05 2013
 # Name-     backupwpar
-# Version-  v3
+# Version-  Final
 # Descrip-  Script to run a savewpar for wpars in the nim database
 # Input -   Reads an argument list as nim defined wpar.  If the
 #           hostname exists in the nim database, it will be

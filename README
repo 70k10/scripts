@@ -16,3 +16,7 @@ Original idea here: http://www.raketenwerfer.de/post/939084469/small-script-to-d
 smbcheck.cgi
 CGI script for checking if samba mounts from fstab are mounted
 Written awhile ago...
+
+mksysb and wpar backup scripts
+mksysb one came from a site out there, I added the ability to provide multiple host arguments
+wpar one uses the framework from mksysb to backup defined wpars
