@@ -6,9 +6,9 @@
 # Version-  Final
 # Descrip-  Script to run a savewpar for wpars in the nim database
 # Input -   Reads an argument list as nim defined wpar.  If the
-#           hostname exists in the nim database, it will be
-#           backed up. If a hostname fails
-#           the nim database check, the whole script exits.
+#           wpar exists in the nim database, it will be
+#           backed up. If a wpar check fails against the
+            nim database, the whole script exits.
 # Logic -   Script will keep one version of a wpar backup on hand. 
 ################################################################################
  
